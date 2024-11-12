@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', /* 'class' or 'media', we use 'class' to enable dark mode manually */
+        }
+    </script>
+      <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <title>Portafolio</title>
+  </head>
+  <style>
+    *{
+        font-family: "Space Grotesk", sans-serif;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+  </style>
+  <body class="relative text-black dark:text-white p-0 m-0  ">
+    <div
+      class="h-full absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]
+      bg-gradient-to-t from-sky-400 to-sky-200
+      "
+    ></div>
+    
+    
+    <header
+      class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto"
+    >
+      <nav
+        id="navbar"
+        class="transition-all flex gap-2 w-96 justify-center items-center rounded-2xl py-2 mt-14 dark:text-white fixed"
+      >
+        <a
+          href=""
+          class="relative block transition hover:text-blue-500 dark:hover:text-blue-500"
+          >Experiencia</a
+        >
+        <a
+          href=""
+          class="relative block transition hover:text-blue-500 dark:hover:text-blue-500"
+          >Proyectos</a
+        >
+        <a
+          href=""
+          class="relative block transition hover:text-blue-500 dark:hover:text-blue-500"
+          >Sobre Mi</a
+        >
+        <a
+          href=""
+          class="relative block transition hover:text-blue-500 dark:hover:text-blue-500"
+          >Contacto</a
+        >
+        <div id="theme-toggle">
+          <i
+          id="moon"
+            class="hidden fa-regular fa-moon cursor-pointer hover:scale-125 
+            transition"
+          ></i>
+          <i id="sun" class="hidden fa-solid fa-sun cursor-pointer hover:scale-125 
+          transition"></i>
+        </div>
+      </nav>
+    </header>
+    <main class="pt-14 [&>section]:w-4/5 [&>section]:mx-auto [&>section]:mb-3 pb-10">
+      <section class="mt-11">
+        <div class="flex items-center gap-3">
+          <img src="isaac.png" alt="EtienneFoto" class="rounded-full size-24" />
+          <div class="flex items-center">
+            <span
+              class="relative inline-flex overflow-hidden rounded-full p-[1px]"
+            >
+              <span
+                class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"
+              >
+              </span>
+              <div
+                class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-sky-800 bg-green-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap"
+              >
+                <a href="#" target="_blank" class="text-xl">aaaaaaaaaaaaa</a>
+              </div>
+            </span>
+          </div>
+        </div>
+        <h2 class="font-bold text-3xl mb-4">Hey, soy Etienne</h1>
+        <p class="font-medium mb-4">
+          Lorem ipsum dolor sit amet, consectetur
+          <span class="text-yellow-300"
+            >adipisicing elit. Dolorem quisquam et veritatis</span
+          >
+          quis provident! Quasi at tenetur quia natus aspernatur provident
+          asperiores, dolore vero omnis culpa eligendi est maxime mollitia
+          pariatur quam velit, cumque debitis magni? Nihil, doloribus quis
+          nesciunt aliquam veritatis facere? Officiis sint cumque molestiae
+          delectus hic? Optio.
+        </p>
+        <div
+          class="flex gap-4 [&>button]:rounded-full [&>button]:border [&>button]:p-2"
+        >
+          <a
+            href="mailto:etiennemfernandez@gmail.com"
+            class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+            ><i class="fa-regular fa-envelope"></i> Contactame</a
+          >
+          <a href="#" target="_blank"
+            class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+            ><i class="fa-brands fa-linkedin-in"></i> Linkedin</a
+          >
+        </div>
+      </section>
+      <section>
+        <h2 class="font-bold text-3xl mb-4">
+            <i class="fa-solid fa-briefcase"></i> Experiencia Laboral
+        </h2>
+        <ol class="relative mt-16">
+            <li>
+                <div class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]">
+                    <div class="relative pb-12 md:col-span-2">
+                        <div class="sticky top-0">
+                            <span class="text-yellow-600 -left-[43px] absolute rounded-full text-5xl">•</span>
+                            <h3 class="text-xl font-bold text-yellow-400">Desarrollador Web</h3>
+                            <h4 class="font-semibold text-xl text-gray-600 dark:text-white">Desis</h4>
+                            <div class="[&>i]:text-xl flex items-center gap-3">
+                                <i class="fa-brands fa-php text-blue-500" title="PHP"></i>
+                                <i class="fa-brands fa-js text-yellow-400" title="Javascript"></i>
+                                <img class="size-5" src="postgresql-logo-svgrepo-com.svg" title="Postsql" alt="Postsql">
+                                <i class="fa-brands fa-css3-alt text-blue-500" title="CSS3"></i>
+                            </div>
+                            <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">Abril 2023 - Agosto 2024</time>
+
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet labore ratione repudiandae ipsa maxime tempora. Aliquam facere saepe dolore odit repudiandae dignissimos cupiditate, tempore, itaque sed fugiat atque quidem? Ducimus neque, non cum maiores sunt dolore ut enim modi possimus incidunt esse nulla corporis mollitia pariatur dolor libero quidem iusto molestias? Tempora fugiat sed dolorum ullam, similique a. Vel facere culpa aut deserunt omnis sapiente molestiae. Minima delectus quibusdam ducimus architecto aspernatur, commodi tempora ab repellendus illo at quisquam possimus, esse fuga. Molestias et quae quos iusto rerum fugiat earum distinctio culpa, libero quisquam debitis nesciunt, voluptates doloribus alias. Soluta.
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]">
+                    <div class="relative pb-12 md:col-span-2">
+                        <div class="sticky top-0">
+                            <span class="text-yellow-400 -left-[43px] absolute rounded-full text-5xl">•</span>
+                            <h3 class="text-xl font-bold text-yellow-400">Desarrollador Web</h3>
+                            <h4 class="font-semibold text-xl text-gray-600 dark:text-white">Samtech</h4>
+                            <div class="[&>i]:text-xl flex items-center gap-3">
+                                <i class="fa-brands fa-js text-yellow-400" title="Javascript"></i>
+                                <i class="fa-brands fa-node-js text-green-200" title="Nodejs"></i>
+                                <i class="fa-brands fa-jira text-blue-400" title="Jira"></i>
+                                <img class="size-5" src="postgresql-logo-svgrepo-com.svg" title="Postsql" alt="Postsql">
+                                <i class="fa-brands fa-react text-cyan-400" title="React js"></i>
+                                <i class="fa-brands fa-css3-alt text-blue-500" title="CSS3"></i>
+                            </div>
+                            <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">Julio 2022 - Noviembre 2022</time>
+
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam autem consequuntur odit hic error similique eum doloremque ipsum dolorum expedita?
+                    </div>
+                </div>
+            </li>
+        </ol>
+      </section>
+      <section class="pb-20">
+        <h2 class="font-bold text-3xl mb-4">
+            <i class="fa-solid fa-code"></i> Proyectos
+        </h2>
+      </section>
+      <section class="">
+        <h2 class="font-bold text-3xl mb-10">
+            <i class="fa-solid fa-user"></i> Sobre mí
+        </h2>
+        <div class="mb-4">
+            <div class="border size-52 shadow-yellow-400 shadow-inner mx-auto rotate-2 rounded-md flex justify-center items-center">
+                <img src="isaac.gif" class="size-[97%] border rounded-md" alt="">
+            </div>
+        </div>
+        <p class="text-left">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam beatae similique, ipsam nemo obcaecati commodi expedita culpa hic quaerat facere consequatur? Ipsam ullam nostrum iure? Aut a unde veniam impedit!</p>
+      </section>
+    </main>
+  </body>
+  <script src="script.js"></script>
+</html>
