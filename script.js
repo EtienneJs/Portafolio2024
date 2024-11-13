@@ -52,41 +52,31 @@ var themeToggleLightIcon = document.getElementById("sun");
         }
     });
 
-// const userTheme = localStorage.getItem("theme");
-// const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-// const iconToggle = () =>{
-//     moonIcon.classList.toggle("hidden");
-//     sunIcon.classList.toggle("hidden");
-// }
+    const sections = document.querySelectorAll('.section');
+    const navItems = document.querySelectorAll('#navbar a');
 
-// const themeCheck = () =>{
-//     if(userTheme === "dark" || (!userTheme && systemTheme)){
-//         document.documentElement.classList.add("dark");
-//         moonIcon.classList.add("hidden");
-//         return;
-//     }
-//     moonIcon.classList.add("hidden");
-// }
-
-// const themeSwitch = () =>{
-//     debugger
-//     if(document.documentElement.classList.contains("dark")){
-//         document.documentElement.classList.remove("dark");
-//         localStorage.setItem("theme","light");
-//         iconToggle();
-//         return;
-//     }
-//     document.documentElement.classList.add("dark");
-//     localStorage.setItem("theme","dark");
-//     iconToggle();
-// }
-
-// sunIcon.addEventListener('click',()=>{
-//     themeSwitch();
-// })
-// moonIcon.addEventListener('click',()=>{
-//     themeSwitch();
-// });
-
-// themeCheck();
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // change 
+                const screenSection = entry.target.id
+                navItems.forEach( a=> {
+                    if(a.dataset.nav === screenSection && a.dataset.nav){
+                        a.classList.add("text-blue-500")
+                        return;
+                    }
+                    a.classList.remove("text-blue-500")
+                    return;
+                })
+                // Aquí podrías añadir o cambiar la clase de una sección visible
+                // o actualizar un menú de navegación
+            }
+        });
+    }, {
+        threshold: 0.25  // 50% visible en pantalla para considerarla "visible"
+    });
+    
+    sections.forEach(section => {
+        observer.observe(section);
+    });
